@@ -55,7 +55,7 @@ export const profile = pgTable('profile', {
   id: serial('id').primaryKey(),
   avatar: varchar('avatar'),
   description: text('description'),
-  location: varchar('localtion'),
+  location: varchar('location'),
   userId: integer('user_id')
               .notNull()
               .unique()

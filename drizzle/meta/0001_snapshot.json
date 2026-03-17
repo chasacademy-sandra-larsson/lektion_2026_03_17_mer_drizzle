@@ -1,7 +1,7 @@
 {
-  "id": "6f0da0a5-b5c0-44d7-894d-d76872bedc2f",
-  "prevId": "00000000-0000-0000-0000-000000000000",
-  "version": "6",
+  "id": "118ae849-ad1f-44ba-b5dc-e00dc02f8e78",
+  "prevId": "97ad62d3-2e7e-4af4-ae9d-90b23e796b11",
+  "version": "7",
   "dialect": "postgresql",
   "tables": {
     "public.categories": {
@@ -24,7 +24,10 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     },
     "public.comments": {
       "name": "comments",
@@ -91,7 +94,10 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     },
     "public.post_categories": {
       "name": "post_categories",
@@ -148,7 +154,10 @@
           ]
         }
       },
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     },
     "public.posts": {
       "name": "posts",
@@ -171,6 +180,13 @@
           "type": "text",
           "primaryKey": false,
           "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
         },
         "user_id": {
           "name": "user_id",
@@ -196,7 +212,10 @@
         }
       },
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     },
     "public.profile": {
       "name": "profile",
@@ -220,8 +239,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "localtion": {
-          "name": "localtion",
+        "location": {
+          "name": "location",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
@@ -258,7 +277,10 @@
             "user_id"
           ]
         }
-      }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     },
     "public.users": {
       "name": "users",
@@ -294,11 +316,18 @@
             "email"
           ]
         }
-      }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
     }
   },
   "enums": {},
   "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
   "_meta": {
     "columns": {},
     "schemas": {},
